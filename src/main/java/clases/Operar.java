@@ -21,7 +21,7 @@ public class Operar {
                 + "4. Divición\n"
                 + "5. Potencia\n"
                 + "6. Raiz Cuadrada\n"
-                + "7. Salir\n");
+                + "7. Salir\n\n");
     }
 
     public void leerNumeros() {
