@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Operar {
 
-    private byte operacion = 10;
+    private String operacion = "10";
     private String numero1 = "", numero2 = "";
     private double resultado;
     private boolean EsNumero1;
@@ -13,7 +13,7 @@ public class Operar {
 
     public void MostrarOpciones() {
 
-        operacion = Byte.parseByte(JOptionPane.showInputDialog(
+        operacion = JOptionPane.showInputDialog(
                 "Seleccione una operación\n\n"
                 + "1. Suma\n"
                 + "2. Resta\n"
@@ -21,7 +21,7 @@ public class Operar {
                 + "4. Divición\n"
                 + "5. Potencia\n"
                 + "6. Raiz Cuadrada\n"
-                + "7. Salir\n"));
+                + "7. Salir\n");
     }
 
     public void leerNumeros() {
@@ -36,6 +36,8 @@ public class Operar {
             SumBuleano = EsNumero1 && EsNumero2;
             if (SumBuleano == false) {
                 JOptionPane.showMessageDialog(null, "Solo pueden ser valores numéricos");
+                MostrarOpciones();
+                menu();
             }
         } while (SumBuleano = !true);
     }
@@ -47,6 +49,8 @@ public class Operar {
             EsNumero1 = numero1.matches("[+-]?\\d*(\\.\\d+)?");
             if (EsNumero1 == false) {
                 JOptionPane.showMessageDialog(null, "Solo pueden ser valores numéricos");
+                MostrarOpciones();
+                menu();
             }
         } while (EsNumero1 = !true);
 
@@ -56,14 +60,14 @@ public class Operar {
 
         do {
             switch (operacion) {
-                case 1:
+                case "1":
                     leerNumeros();
                     resultado = Double.parseDouble(numero1) + Double.parseDouble(numero2);
                     JOptionPane.showMessageDialog(null, "La suma es: " + resultado);
                     MostrarOpciones();
                     menu();
                     break;
-                case 2:
+                case "2":
 
                     leerNumeros();
                     resultado = Double.parseDouble(numero1) - Double.parseDouble(numero2);
@@ -71,14 +75,14 @@ public class Operar {
                     MostrarOpciones();
                     menu();
                     break;
-                case 3:
+                case "3":
                     leerNumeros();
                     resultado = Double.parseDouble(numero1) * Double.parseDouble(numero2);
                     JOptionPane.showMessageDialog(null, "La multiplicación es: " + resultado);
                     MostrarOpciones();
                     menu();
                     break;
-                case 4:
+                case "4":
                     leerNumeros();
                     if (Double.parseDouble(numero1) != 0 && Double.parseDouble(numero2) != 0) {
                         resultado = Double.parseDouble(numero1) / Double.parseDouble(numero2);
@@ -89,23 +93,23 @@ public class Operar {
                     MostrarOpciones();
                     menu();
                     break;
-                case 5:
+                case "5":
                     leerNumeros();
                     resultado = Math.pow(Double.parseDouble(numero1), Double.parseDouble(numero2));
                     JOptionPane.showMessageDialog(null, "La potencia es: " + resultado);
                     MostrarOpciones();
                     menu();
                     break;
-                case 6:
+                case "6":
                     leerNumero();
                     resultado = Math.sqrt(Double.parseDouble(numero1));
                     JOptionPane.showMessageDialog(null, "La raíz cuadrada es: " + resultado);
                     MostrarOpciones();
                     menu();
                     break;
-                case 7:
+                case "7":
                     JOptionPane.showMessageDialog(null, "Calculadora Cerrada");
-                    operacion = 7;
+                    operacion = "7";
                     System.exit(0);
                     break;
                 default:
@@ -115,7 +119,7 @@ public class Operar {
                     break;
             }
 
-        } while (operacion != 7);
+        } while (operacion != "7");
 
     }
 }
