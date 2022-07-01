@@ -15,8 +15,6 @@ public class Calculadora {
 
     public static void main(String[] args) {
         byte entrada = 0;
-        byte operar = 0;
-
         do {
             entrada = Byte.parseByte(JOptionPane.showInputDialog(
                     "Seleccione una opción\n\n"
@@ -25,17 +23,17 @@ public class Calculadora {
             switch (entrada) {
                 case 1:
                     Operar ObjOperar = new Operar();
+                    ObjOperar.MostrarOpciones();
                     ObjOperar.menu(); 
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, "Cerrado con exito");
+                    JOptionPane.showMessageDialog(null, "Calculadora cerrada");
                     entrada = 0;
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opcion invalidad");
                     break;
             }
-
         } while (entrada != 0);
 
     }
