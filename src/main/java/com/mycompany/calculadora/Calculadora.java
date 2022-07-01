@@ -25,7 +25,7 @@ public class Calculadora {
             switch (entrada) {
                 case 1:
                     Operar ObjOperar = new Operar();
-                    ObjOperar.leerOpcion(); 
+                    ObjOperar.menu(); 
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Cerrado con exito");
