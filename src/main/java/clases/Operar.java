@@ -10,6 +10,11 @@ public class Operar {
     private boolean EsNumero1;
     private boolean EsNumero2;
     private boolean SumBuleano;
+    
+
+    public void Operar() {
+
+    }
 
     public void MostrarOpciones() {
 
@@ -84,11 +89,11 @@ public class Operar {
                     break;
                 case "4":
                     leerNumeros();
-                    if (Double.parseDouble(numero1) != 0 && Double.parseDouble(numero2) != 0) {
+                    if (Double.parseDouble(numero2) != 0) {
                         resultado = Double.parseDouble(numero1) / Double.parseDouble(numero2);
                         JOptionPane.showMessageDialog(null, "La divición es: " + resultado);
                     } else {
-                        JOptionPane.showMessageDialog(null, "No se puede dividir con ceros");
+                        JOptionPane.showMessageDialog(null, "No se puede dividir sobre cero");
                     }
                     MostrarOpciones();
                     menu();
@@ -122,4 +127,5 @@ public class Operar {
         } while (operacion != "7");
 
     }
+    
 }
